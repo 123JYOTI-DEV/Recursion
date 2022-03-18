@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Recursion_5_way2 {
+    public static void reverse(int i , int n){
+        if(i<1) return;
+        System.out.println(i);
+        reverse(i-1,n);   // we called i-1,n because we need to print in reverse order
+    }
+    public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      int n = sc.nextInt();
+      reverse(n,n);
+    }
+}
+   
+Output:- 
+5
+5
+4
+3
+2
+1
+
+Process finished with exit code 0
