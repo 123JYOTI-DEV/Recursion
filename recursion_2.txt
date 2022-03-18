@@ -1,0 +1,24 @@
+public class Recursion_2 {
+    static int count =1;
+    public static void print_Name(){
+        if(count>5){
+            return ;
+        }
+        System.out.println("Hii i'm Recursion");
+        count++;
+        print_Name();
+    }
+    public static void main(String[] args) {
+        print_Name();
+    }
+}
+
+
+Output :- 
+Hii i'm Recursion
+Hii i'm Recursion
+Hii i'm Recursion
+Hii i'm Recursion
+Hii i'm Recursion
+
+Process finished with exit code 0
