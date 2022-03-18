@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Recursion_3 {
+    public static void  print(int i , int n ){
+        if(i>n) return; //base case
+        System.out.println("recursion Tree");
+        print(i+1,n);     //this will call the function with increased value of i
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int i =1;
+        int n = sc.nextInt();
+        print(i,n);
+    }
+}
+
+
+
+//OutPut :- 
+
+recursion Tree
+recursion Tree
+recursion Tree
+recursion Tree
+recursion Tree
+
+Process finished with exit code 0
