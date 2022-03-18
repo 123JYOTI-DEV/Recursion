@@ -1,0 +1,16 @@
+//recursion intro
+
+public class RecursionLec1 {
+     static int count = 0;  // non static variable can't be ued with static context
+    public static void print(){
+        if(count==3){   // base case 
+            return;
+        }
+        System.out.println(count);
+        count++;
+        print();  // calling function
+    }
+    public static void main(String[] args){
+        print();
+    }
+}
