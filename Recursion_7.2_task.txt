@@ -1,0 +1,18 @@
+package Recursion_TYF;
+
+public class Recursion_7_task {
+    public static int fact(int n){
+        if(n==0) return 1;
+        return (n * fact(n-1));
+    }
+    public static void main(String[] args) {
+        int n=5;
+        System.out.println("factorial: " + fact(n));
+    }
+}
+
+
+OUTPUT :- 
+factorial: 120
+
+Process finished with exit code 0
