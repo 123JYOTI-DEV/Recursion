@@ -1,0 +1,41 @@
+package Recursion_TYF;
+import java.util.ArrayList;
+public class Subsequence_practice3 {
+    public static void array_sub_sequence(int index,int[] arr,ArrayList<Integer> ds){
+        if(index== arr.length){
+            if(ds.size()>0){
+                System.out.println(ds);
+            }
+            if(ds.size()==0) System.out.println("{ }");
+        }
+        else{
+            //picking up the element in for subsequence
+            ds.add(arr[index]);
+            array_sub_sequence(index+1,arr,ds);
+            ds.remove(ds.size()-1); //removing the currently added item
+
+            //not picking up the element for subsequence
+            array_sub_sequence(index+1,arr,ds);
+        }
+        return;
+    }
+    public static void main(String[] args) {
+        int[] arr = {3,1,2};
+        ArrayList<Integer> sub = new ArrayList<>();
+        array_sub_sequence(0,arr,sub);
+    }
+}
+
+
+
+OUTPUT :- 
+[3, 1, 2]
+[3, 1]
+[3, 2]
+[3]
+[1, 2]
+[1]
+[2]
+{ }
+
+Process finished with exit code 0
