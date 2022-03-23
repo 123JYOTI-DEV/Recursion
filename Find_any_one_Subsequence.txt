@@ -1,0 +1,39 @@
+package Recursion_TYF;
+import java.util.ArrayList;
+public class Find_only_one_subsequence_for_sum {
+    public static boolean find_one_subsequence(int index, int[] arr,ArrayList<Integer> ds , int sum , int s){
+        //base case satisfied
+        if(index== arr.length){
+            if(ds.size()>0 && s==sum){
+                System.out.println(ds);
+                return true;
+            }
+            //condition not satisfied
+            return false;
+        }
+        ds.add(arr[index]);
+        s=s+arr[index];
+       if( find_one_subsequence(index+1,arr,ds,sum,s)==true)return true;
+
+       ds.remove(ds.size()-1);
+       s-=arr[index];
+       //not pick case
+       if(find_one_subsequence(index+1,arr,ds,sum,s)==true) return true;
+       return false;
+    }
+    public static void main(String[] args) {
+        int[] arr = {1,2,1};
+        ArrayList<Integer> a = new ArrayList<>();
+        int sum =2;
+        find_one_subsequence(0,arr,a,sum,0);
+
+
+    }
+}
+
+
+
+OUTPUT;- 
+[1, 1]
+
+Process finished with exit code 0
