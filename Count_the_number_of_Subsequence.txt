@@ -1,0 +1,31 @@
+public class Count_number_of_subsequence {
+    public static int count(int index,int[] arr ,int sum , int s ){
+       if(index== arr.length){
+           if(s==sum){
+               return 1;
+           }
+           else return 0;
+       }
+        s+=arr[index];
+       int left =  count(index+1,arr,sum,s);
+        s-=arr[index];
+       int right = count(index+1,arr,sum,s);
+
+       //returning the count by adding left and right recursion call
+        return (left+right);
+    }
+    public static void main(String[] args) {
+        int[] arr = {1,2,1};
+        int index =0;
+        int sum =2;
+        int s = 0;
+        System.out.println(count(index,arr,sum,s));
+
+    }
+}
+
+
+OUTPUT:- 
+2
+
+Process finished with exit code 0
