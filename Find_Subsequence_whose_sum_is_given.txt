@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+public class FindSubsequence_of_sum {
+    public static void find_subsequence_sum(int[] arr , ArrayList<Integer> ds , int index, int sum , int s){
+        if(index ==arr.length){
+            if(ds.size()>0 && s==sum) {
+                System.out.println(ds);
+                return;
+            }
+        }
+        else{
+            //picking element
+            ds.add(arr[index]);
+            s=s+arr[index];
+            find_subsequence_sum(arr,ds,index+1,sum,s);
+            ds.remove(ds.size()-1);
+            s-=arr[index];
+            //not picking the element
+            find_subsequence_sum(arr,ds,index+1,sum,s);
+        }
+    }
+    public static void main(String[] args){
+        int[] arr = {1,2,1};
+        ArrayList<Integer> a = new ArrayList<>();
+        int sum =2;
+        int index =0;
+        int s =0;
+        find_subsequence_sum(arr,a,index,sum,s);
+    }
+}
+
+
+OUTPUT:-
+[1, 1]
+[2]
+
+Process finished with exit code 0
